@@ -6,13 +6,13 @@ import { Tasks } from '../api/tasks.js';
 // Task component - represents a single todo item
 export default class Task extends Component {
   toggleChecked() {
-    Tasks.update(this.props.task_id, {
+    Tasks.update(this.props.task._id, {
       $set: { checked: !this.props.task.checked },
     });
   }
 
   deleteThisTask() {
-    Tasks.remove(this.props.task_id);
+    Tasks.remove(this.props.task._id);
   }
 
   render() {
